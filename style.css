@@ -1,0 +1,291 @@
+/* Firefox (funciona no html e body) */
+html, body {
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+    font-family: work-sans, sans-serif;
+    font-weight: 100;
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 3px;
+}
+
+
+header {
+    background-color: #fffdfd;
+    display: flex;
+    text-align: start;
+    justify-content: space-between;
+    padding: 20px 0;
+    
+}
+
+header h1 {
+    margin-left: 20px;
+    font-size: 2.5em;
+    color: rgb(190, 28, 55);
+    
+}
+
+.datanumeric {
+    color: rgb(30, 0, 199);
+    font-size: 30px;
+    font-weight: 800;
+    margin-right: 40px;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.datasemana {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 30;
+}
+
+.container {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    height: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 0;
+    
+}
+
+.card {
+    margin-top: -25px;
+    padding: 15px 25px;
+    background-color: #fffdfd;
+    width: 23%;
+   
+}
+
+.card h3 {
+    text-transform: uppercase;
+    margin-left: 20px
+}
+
+.card p {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-top: 0;
+    
+}
+
+#aprovado {
+    background: linear-gradient(55deg, rgb(0, 65, 139) 30%, rgb(4, 60, 212));
+    color: #fff;
+    padding: 1px 12px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    
+    
+}
+
+#andamento {
+    background: linear-gradient(55deg, rgb(83, 0, 139) 30%, rgb(144, 29, 238));
+    color: #fff;
+    padding: 1px 12px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+#concluido {
+    background: linear-gradient(45deg, rgb(13, 0, 43) 30%, rgb(1, 5, 211));
+    color: #fff;
+    padding: 1px 12px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+#entregue {
+    background: linear-gradient(45deg, rgb(192, 72, 3) 30%, rgb(235, 148, 18));
+    color: #fff;
+    padding: 1px 12px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+}
+
+
+
+.graficoDonuts {
+    background-color: #fffdfd;
+    padding: 20px;
+    margin-top: 8%;
+    margin-left: 30px;
+    width: calc(98% - 60px);
+  }
+
+
+  
+  .graficos-grid p {
+    font-size: 22px;
+    background-color: rgb(43, 43, 43);
+    padding: 22px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 1;
+    color: white;
+    margin-top: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+  }
+  
+  .graficos-grid {
+    display: grid;
+    grid-template-columns: 35% 64%; /* Lado a lado (row) */
+    gap: 20px;
+    
+    
+  }
+  
+  #donut-chart, #bar-chart {
+    height: auto;
+    border-radius: ;
+    
+    background-color: #f2f2f2; /* apenas visual */
+  }
+  
+
+.tabelaStatus {
+ margin-bottom: 0%;
+ max-height: 500px;
+ position: relative;
+ justify-content: right;
+ 
+}
+
+
+
+/* apenas visual 
+.statush2 {
+   background-color: black;
+   text-align: center;
+   color: white;
+   margin-bottom: 0;
+   padding: 10px;
+   
+   
+}
+*/
+
+tr {
+    text-align: center;
+    font-size: 18px;
+
+}
+  
+
+.highcharts-figure {
+    width: 95%;
+    border-radius:10px;
+    margin-left: 40px;
+}
+
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 0;
+      
+    }
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 8px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .secaoBotoes{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(43, 43, 43);
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      
+    }
+
+   .botoes button{
+      padding: 5px 10px;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 2px;
+      border: none;
+      margin-bottom: 0;
+    
+      
+    }
+
+    #searchInput {
+        padding: 5px 20px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+    }
+
+    .statush2 {
+        margin-left: 20px;
+    }
+
+
+
+
+    /* apenas visual 
+    .botoes button {
+      padding: 5px 10px;
+      margin-right: 2px;
+      cursor: pointer;
+      border-radius: 2px;
+      border: none;
+      margin-bottom: 0;
+      justify-content: space-between;
+
+    }
+      */
+
+      #pagination button {
+        margin: 0 3px;
+        padding: 5px 10px;
+        align-items: center;
+        cursor: pointer;
+      }
+      
+      #pagination button.active {
+        background-color: #6200ea;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      
+      #pagination button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      

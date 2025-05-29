@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+
+    <header>
+        <div>
+        <h1>LOGO Dash</h1>
+        </div>
+    <div id="data-container">
+  <div class="datanumeric" id="data-dia"> </div>
+  <div class="datasemana" id="data-semana"> </div>
+</div>
+
+       
+    </header>
+
+    <section>
+        <div class="container">
+            <div id="aprovado" class="card">
+                <h3>Aprovados</h3>
+                <p>225</p>
+            </div>
+            <div id="andamento" class="card">
+                <h3>Andamento</h3>
+                <p>85</p>
+            </div>
+            <div id="concluido" class="card">
+                <h3>Concluido</h3>
+                <p>55</p>
+            </div>
+            <div id="entregue" class="card">
+                <h3>Entregue</h3>
+                <p>85</p>
+            </div>
+        </div>
+         
+        
+    </section>
+
+    
+    <div class="graficoDonuts">
+        
+      
+        <div class="graficos-grid">
+            <section >
+                <p>Quantificação por Status</p>        
+          <div id="donut-chart"></div>
+        </section>
+
+          
+            
+<section class="tabelaStatus">
+  <div class="secaoBotoes">
+    <h2 class="statush2">Serviços em Execução</h2>
+    <input type="text" placeholder="Buscar OS" id="searchInput" onkeyup="filtrarTabela()">
+    <div class="botoes">
+    <button  style="background-color: lightgreen;"  onclick="filtrar('dia')">Dia</button>
+    <button style="background-color: lightblue;" onclick="filtrar('semana')">Semana</button>
+    <button style="background-color: lightcoral;" onclick="filtrar('mes')">Mês</button>
+    <button style="background-color: lightgoldenrodyellow;" onclick="filtrar('todos')">Mostrar Todos</button>
+     </div>
+  </div>
+
+       
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>OS</th>
+        <th>Clientes</th>
+        <th>Status</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-os">
+      <!-- Exemplo de muitas linhas -->
+      <tr data-data="2025-05-26"><td>26/05/2025</td><td>001</td><td>Ramon</td><td>Concluido</td><td>Reparo de placa</td></tr>
+      <tr data-data="2025-05-20"><td>20/05/2025</td><td>002</td><td>Ibra</td><td>Andamento</td><td>Reparo completo</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>003</td><td>Rodrigo</td><td>Concluido</td><td>Reparo de tela</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>004</td><td>João</td><td>Concluido</td><td>Formatação</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>005</td><td>Ana</td><td>Concluido</td><td>Troca de HD</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>006</td><td>Lucas</td><td>Concluido</td><td>Troca de teclado</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>007</td><td>Maria</td><td>Concluido</td><td>Upgrade de memória</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>008</td><td>José</td><td>Concluido</td><td>Backup de dados</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>009</td><td>Luana</td><td>Concluido</td><td>Reparo da fonte</td></tr>
+      <tr data-data="2025-04-15"><td>15/04/2025</td><td>010</td><td>Paulo</td><td>Concluido</td><td>Limpeza interna</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Container onde os botões vão aparecer -->
+  <div id="pagination"></div>
+          
+</section>
+        
+          
+        </div>
+      </div>
+      
+    
+      <figure class="highcharts-figure">
+        <div id="container"></div>
+        <p class="highcharts-description">
+            
+        </p>
+    </figure>
+     <!--
+      <div id="bar-chart"></div>
+      -->
+    <script src="script.js"></script>
+</body>
+</html>
