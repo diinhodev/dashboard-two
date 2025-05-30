@@ -79,6 +79,9 @@ function filtrar(tipo) {
   });
 }
 
+// Função para imporrtar nome no grafico clientes para teste e validação 
+let nome = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eduardo',];
+
 
 // Configuração inicial dos gráficos (com dados mockados)
 let donutOptions = {
@@ -152,40 +155,33 @@ window.barChart.render();
 
 // Highcharts exemplo (dados fixos, pode adaptar depois)
 Highcharts.chart("container", {
-  chart: { zoomType: "xy" },
+  chart: { zoomType: "xy", type: "column" },
   title: { text: "Esteira de Serviços", align: "left" },
-  credits: {
-    enabled: false,
-  },
-  xAxis: [
-    {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      crosshair: true,
-    },
-  ],
+  credits: { enabled: false },
+
+  xAxis: [{
+    categories: [
+      "Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6",
+      "Set 7", "Set 8", "Set 9", "Set 10", "Set 11", "Set 12"
+    ],
+    crosshair: true
+  }],
+
   yAxis: [
     {
+      // Mostra os nomes dos clientes no eixo Y
       labels: {
-        format: "{value} Valores",
+        formatter: function () {
+          return nome[this.value] || this.value;
+        },
         style: { color: Highcharts.getOptions().colors[1] },
       },
       title: {
-        text: "Vendas",
+        text: "Clientes",
         style: { color: Highcharts.getOptions().colors[1] },
       },
+      max: nome.length - 1, // define o topo com base na quantidade de nomes
+      tickInterval: 1, // um nome por linha
     },
     {
       title: {
@@ -199,29 +195,35 @@ Highcharts.chart("container", {
       opposite: true,
     },
   ],
+
   tooltip: { shared: true },
   legend: {
     align: "left",
     verticalAlign: "top",
     backgroundColor: "rgba(255,255,255,0.25)",
   },
+
+
+  // Configuração dos dados do gráfico engjamento 
   series: [
     {
       name: "Engajamento (Páginas visitadas)",
       type: "column",
       yAxis: 1,
       data: [
-        45.7, 37.0, 28.9, 17.1, 39.2, 18.9, 90.2, 78.5, 74.6, 18.7, 17.1, 16.0,
+        15, 4, 5, 15, 10, 20, 90.2, 78.5, 74.6, 18.7, 17.1, 16.0
       ],
       tooltip: { valueSuffix: "" },
     },
+
+    // Configuração dos dados do gráfico vendas
     {
       name: "Vendas",
       type: "spline",
       data: [
-        -11.4, -9.5, -14.2, 0.2, 7.0, 12.1, 13.5, 13.6, 8.2, -2.8, -12.0, -15.5,
+        1, 2, 2, 4, 4, 5, 6, 7, 8, 9, null, null // cada valor representa o índice do cliente
       ],
-      tooltip: { valueSuffix: "°C" },
+      tooltip: { valueSuffix: "" },
     },
   ],
 });
